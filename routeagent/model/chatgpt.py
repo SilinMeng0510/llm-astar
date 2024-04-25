@@ -1,6 +1,5 @@
 import openai
-import argparse
-import json
+import argparse, json, os
 
 # This class instantiate the API, used to communicate with GPT
 class ChatGPT:
@@ -24,7 +23,10 @@ class ChatGPT:
         for key in keys:
             self.prompt += f"{example[key]}"
         self.prompt += "\nHere is the task.\n"
-
+        
+        if not os.path.exists(f'outcome/{method}/'):
+            os.makedirs(f'outcome/{method}/', exist_ok=True)
+            
         with open(f'outcome/{method}/chat_history.txt', 'w') as file:
             file.write("PROMPT & INCONTEXT SAMPLES\n")
             file.write(self.prompt)

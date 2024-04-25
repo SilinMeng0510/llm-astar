@@ -127,3 +127,5 @@ dmypy.json
 
 # API key hide
 config.json
+
+outcome/*

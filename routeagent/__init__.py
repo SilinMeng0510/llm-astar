@@ -1,1 +1,1 @@
-from .planner import RePE
+from .version import __version__

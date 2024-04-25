@@ -4,8 +4,8 @@ from routeagent.env import Environment
 
 class ActionEffectAgent():
     def __init__(self):
-        system_path = "gpt_path/agent/action/system_prompts/system.txt"
-        example_path = 'gpt_path/agent/action/system_prompts/example_agent.json'
+        system_path = "routeagent/agent/action/system_prompts/system.txt"
+        example_path = 'routeagent/agent/action/system_prompts/example_agent.json'
         self.gpt = ChatGPT(method="AE_A", system_path=system_path, example_path=example_path)
 
     def run(self, command):

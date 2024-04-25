@@ -1,0 +1,215 @@
+PROMPT & INCONTEXT SAMPLES
+You are an AI assistant specialized in planning collision-free paths for drones in a two-dimensional environment. You will be given a specific start point, end points and circular obstable position with size.Your task is to calculate a path from the start point to the end point that avoids any circular, static obstacles. Your solution should be a sequence of points in the format of [[x1, y1], [x2, y2], ..., [xn, yn]], forming a safe and efficient route to ensure collision-free movement. The path should be a series of straight lines between consecutive points, avoiding all circular obstacles' areas.  Here are 3 examples.
+design a path from [10, 0] to [0, 10] that avoids crossing the area of circle centered at [5, 5] with a radius of 4.
+> think: To move from [10, 0] to [0, 10] while avoid crossing the area of circle centered at [5, 5] with a radius of 4, I need to find one or more points connecting [10, 0] and [0, 10] that is not in the range of circle.
+Ok.
+> think: The point of [0, 0] seems not in the range of circle, and is in range of the eucliean distance of [10, 0] and [0, 10]. I can check if this path is valid.
+OK.
+> search: [10, 0] and [0, 0].
+No collision between [10, 0] and [0, 0].
+> think: If there is no collision between [10, 0] and [0, 0], then I can reach [0, 0] and find the path to endpoint [0, 10] from [0, 0]. The circle obstacle seems not between the path between [0, 0] and [0, 10], so I can check if this path is valid.
+Ok.
+> search: [0, 0] and [0, 10].
+No collision between [0, 0] and [0, 10].
+> think: There is no obstacle between [0, 0] and [0, 10] so I can continue my move on this path and reach the goal.
+Ok.
+> finish:[[10, 0], [0, 0], [0, 10]].
+design a path from [80, 40] to [-10, 10] that avoids crossing the area of circle centered at [32, 32] with a radius of 30.
+> think: To move from [80, 40] to [-10, 10] while avoid crossing the area of circle centered at [32, 32] with a radius of 30, I need to find one or more points connecting [80, 40] and [-10, 10] that is not in the range of circle.
+Ok.
+> think: Circle is on the left of start point [80, 40] and endpoint [-10, 10] is on the bottom left of start pont [80, 40]. I can first move down until out of circle's y boundary. So I can check if path to [80, 0] is valid.
+Ok.
+> search: [80, 40] and [80, 0].
+No collision between [80, 40] and [80, 0].
+> think: Now I can reach [80, 0] which is out of circle's y boundary, I may be able to directly move to the endpoint [-10, 10]. Let's check the path.
+Ok.
+> search: [80, 0] and [-10, 10]
+Collision between [80, 0] and [-10, 10].
+> think: So path to [-10, 10] from [80, 0] doesn't work, then I can try directly move left to where enpoint position in x axis which is -10.
+Ok.
+> search: [80, 0] and [-10, 0].
+No collision between [80, 0] and [-10, 0].
+> think: There is no circle or obstacle between the path to the endpoint.
+Ok.
+> search: [-10, 0] and [-10, 10].
+No collision between [-10, 0] and [-10, 10].
+> think: There is no collision from [-10, 0] and [-10, 10], so I can continue the path to the endpoint [-10, 10].
+Ok.
+> finish:[[80, 40], [80, 0], [-10, 0], [-10, 10]].
+design a path from [-2, 27] to [3, -50] that avoids crossing the area of circle centered at [-19, 6] with a radius of 23.
+> think: To move from [-2, 27] to [3, -50] while avoid crossing the area of circle centered at [-19, 6] with a radius of 23, I need to find one or more points connecting [-2, 27] and [3, -50] that is not in the range of circle. Start point and end point are close to each other in x axis.
+Ok.
+> think: There seems no obstacle in between the path from start point [-2, 27] to the point [10, 0]. And [10, 0] is closer to the endpoint [3, -50].
+Ok.
+> search: [-2, 27] and [10, 0].
+No collision between [-2, 27] and [10, 0].
+> think: There is no obstacle between the path from current position to endpoint. So we check the path to the endpoint.
+Ok
+> search: [10, 0] and [3, -50].
+No collision between [10, 0] and [3, -50].
+> think: So I can move directly to the endpoint [3, -50] and finish the task.
+Ok.
+> finish:[[-2, 27], [10, 0], [3, -50]].
+
+Here is the task.
+
+*********************************************************************************************
+
+CHAT HISTORY WITH GPT-3.5
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+
+GPT> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+ENV> Ok.
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+
+GPT> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+ENV> Ok.
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+
+GPT> search: [32, -18] and [-20, -18].
+ENV> No collision between [32, -18] and [-20, -18].
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+> search: [32, -18] and [-20, -18].
+No collision between [32, -18] and [-20, -18].
+
+GPT> think: Now I can reach [-20, -18] which is out of circle's x boundary, I may be able to directly move to the endpoint [-47, 23]. Let's check the path.
+ENV> Ok.
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+> search: [32, -18] and [-20, -18].
+No collision between [32, -18] and [-20, -18].
+> think: Now I can reach [-20, -18] which is out of circle's x boundary, I may be able to directly move to the endpoint [-47, 23]. Let's check the path.
+Ok.
+
+GPT> search: [-20, -18] and [-47, 23].
+ENV> Collision between [-20, -18] and [-47, 23].
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+> search: [32, -18] and [-20, -18].
+No collision between [32, -18] and [-20, -18].
+> think: Now I can reach [-20, -18] which is out of circle's x boundary, I may be able to directly move to the endpoint [-47, 23]. Let's check the path.
+Ok.
+> search: [-20, -18] and [-47, 23].
+Collision between [-20, -18] and [-47, 23].
+
+GPT> think: So path to [-47, 23] from [-20, -18] doesn't work, then I can try moving up until out of circle's y boundary. So I can check if path to [-20, 3] is valid.
+ENV> Ok.
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+> search: [32, -18] and [-20, -18].
+No collision between [32, -18] and [-20, -18].
+> think: Now I can reach [-20, -18] which is out of circle's x boundary, I may be able to directly move to the endpoint [-47, 23]. Let's check the path.
+Ok.
+> search: [-20, -18] and [-47, 23].
+Collision between [-20, -18] and [-47, 23].
+> think: So path to [-47, 23] from [-20, -18] doesn't work, then I can try moving up until out of circle's y boundary. So I can check if path to [-20, 3] is valid.
+Ok.
+
+GPT> search: [-20, -18] and [-20, 3].
+ENV> Collision between [-20, -18] and [-20, 3].
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+> search: [32, -18] and [-20, -18].
+No collision between [32, -18] and [-20, -18].
+> think: Now I can reach [-20, -18] which is out of circle's x boundary, I may be able to directly move to the endpoint [-47, 23]. Let's check the path.
+Ok.
+> search: [-20, -18] and [-47, 23].
+Collision between [-20, -18] and [-47, 23].
+> think: So path to [-47, 23] from [-20, -18] doesn't work, then I can try moving up until out of circle's y boundary. So I can check if path to [-20, 3] is valid.
+Ok.
+> search: [-20, -18] and [-20, 3].
+Collision between [-20, -18] and [-20, 3].
+
+GPT> think: Path to [-20, 3] also doesn't work, then I can try moving right until out of circle's x boundary. So I can check if path to [32, 3] is valid.
+ENV> Ok.
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+> search: [32, -18] and [-20, -18].
+No collision between [32, -18] and [-20, -18].
+> think: Now I can reach [-20, -18] which is out of circle's x boundary, I may be able to directly move to the endpoint [-47, 23]. Let's check the path.
+Ok.
+> search: [-20, -18] and [-47, 23].
+Collision between [-20, -18] and [-47, 23].
+> think: So path to [-47, 23] from [-20, -18] doesn't work, then I can try moving up until out of circle's y boundary. So I can check if path to [-20, 3] is valid.
+Ok.
+> search: [-20, -18] and [-20, 3].
+Collision between [-20, -18] and [-20, 3].
+> think: Path to [-20, 3] also doesn't work, then I can try moving right until out of circle's x boundary. So I can check if path to [32, 3] is valid.
+Ok.
+
+GPT> search: [-20, -18] and [32, -18].
+ENV> No collision between [-20, -18] and [32, -18].
+
+
+CHAT-1
+User> design a path from [32, -18] to [-47, 23] that avoids crossing the area of circle centered at [-20, 3] with a radius of 13.
+> think: To move from [32, -18] to [-47, 23] while avoid crossing the area of circle centered at [-20, 3] with a radius of 13, I need to find one or more points connecting [32, -18] and [-47, 23] that is not in the range of circle. Start point and end point are far from each other in x axis.
+Ok.
+> think: I can first move left until out of circle's x boundary. So I can check if path to [-20, -18] is valid.
+Ok.
+> search: [32, -18] and [-20, -18].
+No collision between [32, -18] and [-20, -18].
+> think: Now I can reach [-20, -18] which is out of circle's x boundary, I may be able to directly move to the endpoint [-47, 23]. Let's check the path.
+Ok.
+> search: [-20, -18] and [-47, 23].
+Collision between [-20, -18] and [-47, 23].
+> think: So path to [-47, 23] from [-20, -18] doesn't work, then I can try moving up until out of circle's y boundary. So I can check if path to [-20, 3] is valid.
+Ok.
+> search: [-20, -18] and [-20, 3].
+Collision between [-20, -18] and [-20, 3].
+> think: Path to [-20, 3] also doesn't work, then I can try moving right until out of circle's x boundary. So I can check if path to [32, 3] is valid.
+Ok.
+> search: [-20, -18] and [32, -18].
+No collision between [-20, -18] and [32, -18].
+

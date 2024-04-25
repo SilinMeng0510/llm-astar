@@ -1,0 +1,186 @@
+START-1: (32, -18), END-1: (-47, 23)
+OBJECT-1: circle:(-20, 3) with radius=13
+PATH-1: [(32, -18), (32, 3), (-47, 3), (-47, 23)]
+START-END EVALUATION-1: Satisfied
+PATH EVALUATION-1: Collide
+
+START-2: (-25, -25), END-2: (49, 39)
+OBJECT-2: circle:(41, 30) with radius=3
+PATH-2: [(-25, -25), (0, 0), (49, 39)]
+START-END EVALUATION-2: Satisfied
+PATH EVALUATION-2: Collide
+
+START-3: (-19, -8), END-3: (22, -20)
+OBJECT-3: circle:(-1, -20) with radius=13
+PATH-3: [(-19, -8), (-1, -8), (-1, -20), (22, -20)]
+START-END EVALUATION-3: Satisfied
+PATH EVALUATION-3: Collide
+
+START-4: (-46, 4), END-4: (41, 0)
+OBJECT-4: circle:(13, 10) with radius=10
+PATH-4: [(-46, 4), (-13, 10), (13, 10), (41, 0)]
+START-END EVALUATION-4: Satisfied
+PATH EVALUATION-4: Collide
+
+START-5: (-27, -28), END-5: (2, -21)
+OBJECT-5: circle:(-15, -25) with radius=11
+PATH-5: [(-27, -28), (-15, -25), (2, -21)]
+START-END EVALUATION-5: Satisfied
+PATH EVALUATION-5: Collide
+
+START-6: (-14, 49), END-6: (42, -43)
+OBJECT-6: circle:(-19, 17) with radius=29
+PATH-6: [(-14, 49), (0, 17), (42, -43)]
+START-END EVALUATION-6: Satisfied
+PATH EVALUATION-6: Collide
+
+START-7: (21, 33), END-7: (-33, -4)
+OBJECT-7: circle:(-27, 9) with radius=11
+PATH-7: [(21, 33), (0, 9), (-33, -4)]
+START-END EVALUATION-7: Satisfied
+PATH EVALUATION-7: Collide
+
+START-8: (-39, -38), END-8: (48, 10)
+OBJECT-8: circle:(-3, -10) with radius=20
+PATH-8: [(-39, -38), (-3, -10), (48, 10)]
+START-END EVALUATION-8: Satisfied
+PATH EVALUATION-8: Collide
+
+START-9: (-43, -3), END-9: (35, -16)
+OBJECT-9: circle:(14, 12) with radius=27
+PATH-9: [(-43, -3), (-14, 12), (35, -16)]
+START-END EVALUATION-9: Satisfied
+PATH EVALUATION-9: Collide
+
+START-10: (-40, 11), END-10: (43, -42)
+OBJECT-10: circle:(2, -24) with radius=10
+PATH-10: [(-40, 11), (-10, -24), (2, -42), (43, -42)]
+START-END EVALUATION-10: Satisfied
+PATH EVALUATION-10: Collide
+
+START-11: (-2, -17), END-11: (23, -40)
+OBJECT-11: circle:(22, -32) with radius=7
+PATH-11: [(-2, -17), (15, -17), (23, -40)]
+START-END EVALUATION-11: Satisfied
+PATH EVALUATION-11: Collide
+
+START-12: (-45, -37), END-12: (32, -45)
+OBJECT-12: circle:(6, -41) with radius=3
+PATH-12: [(-45, -37), (-45, -41), (6, -41), (6, -45), (32, -45)]
+START-END EVALUATION-12: Satisfied
+PATH EVALUATION-12: Collide
+
+START-13: (42, -32), END-13: (-17, -5)
+OBJECT-13: circle:(3, -10) with radius=15
+PATH-13: [(42, -32), (42, -10), (3, -10), (-17, -5)]
+START-END EVALUATION-13: Satisfied
+PATH EVALUATION-13: Collide
+
+START-14: (2, 10), END-14: (27, 13)
+OBJECT-14: circle:(15, 12) with radius=5
+PATH-14: [(2, 10), (15, 10), (27, 13)]
+START-END EVALUATION-14: Satisfied
+PATH EVALUATION-14: Collide
+
+START-15: (43, 48), END-15: (6, -33)
+OBJECT-15: circle:(2, -6) with radius=21
+PATH-15: [(43, 48), (2, 27), (2, -6), (6, -33)]
+START-END EVALUATION-15: Satisfied
+PATH EVALUATION-15: Collide
+
+START-16: (-21, 33), END-16: (38, -38)
+OBJECT-16: circle:(-14, -13) with radius=35
+PATH-16: [(-21, 33), (-14, 0), (38, -38)]
+START-END EVALUATION-16: Satisfied
+PATH EVALUATION-16: Collide
+
+START-17: (49, -16), END-17: (-44, 50)
+OBJECT-17: circle:(24, 12) with radius=20
+PATH-17: [(49, -16), (24, 0), (-44, 50)]
+START-END EVALUATION-17: Satisfied
+PATH EVALUATION-17: Collide
+
+START-18: (-42, 27), END-18: (-14, -38)
+OBJECT-18: circle:(-30, -20) with radius=12
+PATH-18: [(-42, 27), (-30, 15), (-14, -38)]
+START-END EVALUATION-18: Satisfied
+PATH EVALUATION-18: Collide
+
+START-19: (42, 19), END-19: (-23, -12)
+OBJECT-19: circle:(8, -8) with radius=26
+PATH-19: [(42, 19), (8, 0), (-23, -12)]
+START-END EVALUATION-19: Satisfied
+PATH EVALUATION-19: Collide
+
+START-20: (16, 49), END-20: (37, 15)
+OBJECT-20: circle:(20, 43) with radius=2
+PATH-20: [(16, 49), (20, 49), (20, 43), (37, 43), (37, 15)]
+START-END EVALUATION-20: Satisfied
+PATH EVALUATION-20: Collide
+
+START-21: (-48, -24), END-21: (11, -26)
+OBJECT-21: circle:(-10, -18) with radius=7
+PATH-21: [(-48, -24), (-10, -18), (11, -26)]
+START-END EVALUATION-21: Satisfied
+PATH EVALUATION-21: Collide
+
+START-22: (22, 45), END-22: (-32, -10)
+OBJECT-22: circle:(-24, 17) with radius=20
+PATH-22: [(22, 45), (0, 20), (-32, -10)]
+START-END EVALUATION-22: Satisfied
+PATH EVALUATION-22: Collide
+
+START-23: (23, -7), END-23: (13, -44)
+OBJECT-23: circle:(9, -24) with radius=19
+PATH-23: [(23, -7), (16, -24), (13, -44)]
+START-END EVALUATION-23: Satisfied
+PATH EVALUATION-23: Collide
+
+START-24: (-14, 20), END-24: (28, 1)
+OBJECT-24: circle:(8, -16) with radius=25
+PATH-24: [(-14, 20), (0, 0), (28, 1)]
+START-END EVALUATION-24: Satisfied
+PATH EVALUATION-24: Collide
+
+START-25: (-19, 1), END-25: (21, 44)
+OBJECT-25: circle:(4, 32) with radius=14
+PATH-25: [(-19, 1), (4, 1), (4, 18), (21, 18), (21, 44)]
+START-END EVALUATION-25: Satisfied
+PATH EVALUATION-25: Collide
+
+START-26: (-20, -39), END-26: (-16, 33)
+OBJECT-26: circle:(-20, 7) with radius=15
+PATH-26: [(-20, -39), (-20, -22), (-20, -7), (-16, 7), (-16, 33)]
+START-END EVALUATION-26: Satisfied
+PATH EVALUATION-26: Collide
+
+START-27: (0, 4), END-27: (4, -27)
+OBJECT-27: circle:(9, -12) with radius=8
+PATH-27: [(0, 4), (4, 4), (4, -27)]
+START-END EVALUATION-27: Satisfied
+PATH EVALUATION-27: Collide
+
+START-28: (24, 25), END-28: (38, -7)
+OBJECT-28: circle:(29, -1) with radius=7
+PATH-28: [(24, 25), (38, 25), (38, -7)]
+START-END EVALUATION-28: Satisfied
+PATH EVALUATION-28: Not Collide
+
+START-29: (-31, -29), END-29: (23, 9)
+OBJECT-29: circle:(-5, -26) with radius=19
+PATH-29: [(-31, -29), (-5, -26), (23, 9)]
+START-END EVALUATION-29: Satisfied
+PATH EVALUATION-29: Collide
+
+START-30: (28, -24), END-30: (-36, -41)
+OBJECT-30: circle:(12, -23) with radius=8
+PATH-30: [(28, -24), (12, -24), (12, -41), (-36, -41)]
+START-END EVALUATION-30: Satisfied
+PATH EVALUATION-30: Collide
+
+******************************************************************************************
+SE_SAT RATIO: 30/30
+COLLISION_FREE ACCURACY: 1/30
+COLLISION_FREE TO SE_SAT RATIO: 1/30
+
+SATISFIED SAMPLE ID: {28}

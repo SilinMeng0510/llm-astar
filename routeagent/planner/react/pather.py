@@ -1,19 +1,25 @@
-from ...utils import parse, colors, list_parse
-from ...model import ChatGPT
-from gpt_path.env import Environment
+from ...utils.utils import parse, colors, list_parse
+from ...model.chatgpt import ChatGPT
+from routeagent.env import Environment
+import time
 
-class ActionEffectAgent():
-    def __init__(self):
-        system_path = "gpt_path/agent/action/system_prompts/system.txt"
-        example_path = 'gpt_path/agent/action/system_prompts/example_agent.json'
-        self.gpt = ChatGPT(method="AE_A", system_path=system_path, example_path=example_path)
+
+class ReAct():
+    def __init__(self, correction=False):
+        system_path = "gpt_path/planner/react/system_prompts/system.txt"
+        example_path = 'gpt_path/planner/react/system_prompts/example_planner.json'
+        self.gpt = ChatGPT(method="ReAct", system_path=system_path, example_path=example_path)
+        self.correction = correction
+
 
     def run(self, command):
         self.gpt.id += 1
         
         sample = parse(command)
-
+        
         answer = self.gpt_feed(command, sample)
+        if self.gpt.id % 5 == 0:
+            time.sleep(30)
         # clean the answer
         index = 0
         while index < len(answer) - 1:
@@ -28,7 +34,7 @@ class ActionEffectAgent():
         env = Environment(start=(object[0], object[1]), end=(object[2], object[3]), object=object[4:])
         prompt += "\n"
         while True:
-            with open('outcome/AE_A/chat_history.txt', 'a+') as file:
+            with open('outcome/ReAct/chat_history.txt', 'a+') as file:
                 file.write(f"\nCHAT-{self.gpt.id}\n")
                 
                 question = colors.YELLOW + "User> " + colors.ENDC
@@ -46,15 +52,12 @@ class ActionEffectAgent():
                     break
                 
                 check = env.step(response)
-                
+
                 answer = colors.BLUE + "ENV> " + colors.ENDC
                 print(f"\n{answer}{check}\n")
                 file.write(f"ENV> {check}\n")
-                
+
                 prompt += response + "\n" + check
-                
-                if check.startswith('Success:'):
-                    return env.path
                 
                 if check.startswith("Failed:") or env.index > 20:
                     path = [[object[0], object[1]], [object[2], object[3]]]

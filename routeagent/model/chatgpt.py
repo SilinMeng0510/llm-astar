@@ -1,14 +1,9 @@
 import openai
-import argparse, json, os
+import os
 
 # This class instantiate the API, used to communicate with GPT
 class ChatGPT:
     def __init__(self, method, sysprompt, example):
-        with open("config.json", "r") as f:
-            config = json.load(f)
-        openai.api_key = config["OPENAI_API_KEY"]
-        openai.organization = config["ORGANIZATION"]
-        
         self.id = 0
         self.prompt = sysprompt.replace("\n", "") + f" Here are {len(example)} examples.\n"
         

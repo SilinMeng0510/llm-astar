@@ -83,3 +83,6 @@ class Dataset:
         
 
         return commands
+    
+    def parse(start, end, obstacle):
+        return f"""design a path from [{start[0]}, {start[1]}] to [{end[0]}, {end[1]}] that avoids crossing the area of circle centered at [{obstacle[0]}, {obstacle[1]}] with a radius of {obstacle[2]}."""

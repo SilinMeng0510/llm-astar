@@ -129,3 +129,4 @@ dmypy.json
 config.json
 
 outcome/*
+main.py

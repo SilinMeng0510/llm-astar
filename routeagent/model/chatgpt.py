@@ -3,13 +3,7 @@ import argparse, json, os
 
 # This class instantiate the API, used to communicate with GPT
 class ChatGPT:
-    def __init__(self, method, system_path, example_path):
-        with open(system_path, "r") as f:
-            sysprompt = f.read()
-
-        with open(example_path, 'r') as file:
-            example = json.load(file)
-
+    def __init__(self, method, sysprompt, example):
         with open("config.json", "r") as f:
             config = json.load(f)
         openai.api_key = config["OPENAI_API_KEY"]
@@ -26,6 +20,7 @@ class ChatGPT:
         
         if not os.path.exists(f'outcome/{method}/'):
             os.makedirs(f'outcome/{method}/', exist_ok=True)
+            os.makedirs(f'outcome/{method}/plots/', exist_ok=True)
             
         with open(f'outcome/{method}/chat_history.txt', 'w') as file:
             file.write("PROMPT & INCONTEXT SAMPLES\n")

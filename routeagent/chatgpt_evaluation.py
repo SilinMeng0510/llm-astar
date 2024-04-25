@@ -96,7 +96,8 @@ with open(f"outcome/{method}/evaluation.txt", 'w') as file:
             file.write("Not Satisfied\n")
             
             file.write(f"PATH EVALUATION-{count}: ")
-            file.write("Collide\n\n")
+            file.write("Not Collide\n\n")
+            continue
         
         line = LineString(path_list)
         circle = Point(object[4], object[5]).buffer(object[6])

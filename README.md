@@ -48,6 +48,7 @@ Silin Meng, Yiwei Wang, Cheng-Fu Yang, Nanyun Peng, Kai-Wei Chang
 
 ## 🪪 License
 MIT. Check `LICENSE`.
+
 [![Downloads](https://static.pepy.tech/badge/llm-astar)](https://pepy.tech/project/llm-astar) ![PyPI - Version](https://img.shields.io/pypi/v/llm-astar)
 
 

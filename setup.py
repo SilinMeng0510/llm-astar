@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 from os import path
 from io import open
 
-ver_file = path.join('routeagent', 'version.py')
+ver_file = path.join('llm-a*', 'version.py')
 with open(ver_file) as f:
     exec(f.read())
 
@@ -17,7 +17,7 @@ with open(path.join(this_directory, 'requirements.txt'), encoding='utf-8') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='routeagent',
+    name='llm-a*',
     version=__version__,
     description='RouteAgent: A Python package for route planning and evaluation with LLMs.',
     long_description=readme(),

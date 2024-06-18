@@ -3,5 +3,7 @@ openai==0.27.2
 inquirer~=3.2.4
 shapely
 matplotlib
+numpy
 transformers
 torch
+shapely

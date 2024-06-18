@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 from os import path
 from io import open
 
-ver_file = path.join('llm-a*', 'version.py')
+ver_file = path.join('llmastar', 'version.py')
 with open(ver_file) as f:
     exec(f.read())
 
@@ -17,15 +17,15 @@ with open(path.join(this_directory, 'requirements.txt'), encoding='utf-8') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='llm-a*',
+    name='llm-astar',
     version=__version__,
-    description='RouteAgent: A Python package for route planning and evaluation with LLMs.',
+    description='LLM-A*: Large Language Model Enhanced Incremental Heuristic Search on Path Planning.',
     long_description=readme(),
     long_description_content_type='text/markdown',
     author='Silin Meng',
     author_email='silinmeng@gmail.com',
-    url='https://github.com/SilinMeng0510/RouteAgent',
-    download_url='https://github.com/SilinMeng0510/RouteAgent/archive/refs/heads/main.zip',
+    url='https://github.com/SilinMeng0510/llm-astar',
+    download_url='https://github.com/SilinMeng0510/llm-astar/archive/refs/heads/main.zip',
     keywords=['LLMs', 'route planning', 'deep learning', 'neural networks', 'research', 'LLMs agent'],
     packages=find_packages(),
     install_requires=requirements,

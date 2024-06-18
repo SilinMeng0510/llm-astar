@@ -17,7 +17,7 @@ with open(path.join(this_directory, 'requirements.txt'), encoding='utf-8') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='llmastar',
+    name='llm-astar',
     version=__version__,
     description='LLM-A*: Large Language Model Enhanced Incremental Heuristic Search on Path Planning.',
     long_description=readme(),

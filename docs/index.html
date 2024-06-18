@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>LLM-A*</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">LLM-A*: Large Language Model Enhanced Incremental Heuristic Search</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Silin Meng</a>,</span>
+                <span class="author-block">
+                  <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Yiwei Wang</a>,</span>
+                  <span class="author-block">
+                    <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Cheng-Fu Yang</a>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Nanyun Peng</a>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Kai-Wei Chang</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">University of California, Los Angeles<br>EMNLP 2024</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/SilinMeng0510/llm-astar" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Dataset link -->
+              <span class="link-block">
+                <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  🤗
+                </span>
+                <span>Dataset</span>
+              </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <h2 class="subtitle has-text-justified">
+        We propose <strong>LLM-A*</strong> 🚀, a novel path planning algorithm that combines the strengths of large language models (LLMs) and A* search, leveraging the global reasoning capabilities of LLMs to guide the search process, significantly reducing the number of visited states and improving pathfinding efficiency.
+      </h2>
+      <div style="display: flex; gap: 20px; justify-content: center;">
+      <img src="static/images/astar.gif" alt="GIF 1", width="400" height="auto">
+      <img src="static/images/llm.gif" alt="GIF 2", width="400" height="auto">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Path planning is a fundamental scientific problem in robotics and autonomous navigation, requiring the derivation of efficient routes from starting to destination points while avoiding obstacles. Traditional algorithms like A* and its variants are capable of ensuring path validity but suffer from significant computational and memory inefficiencies as the state space grows. Conversely, large language models (LLMs) excel in broader environmental analysis through contextual understanding, providing global insights into environments. However, they fall short in detailed spatial and temporal reasoning, often leading to invalid or inefficient routes. In this work, we propose LLM-A*, an new LLM based route planning method that synergistically combines the precise pathfinding capabilities of A* with the global reasoning capability of LLMs. This hybrid approach aims to enhance pathfinding efficiency in terms of time and space complexity while maintaining the integrity of path validity, especially in large-scale scenarios. By integrating the strengths of both methodologies, LLM-A* addresses the computational and memory limitations of conventional algorithms without compromising on the validity required for effective pathfinding.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Algorithm -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">LLM-A* Algorithm Pseudocode</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-quarters">
+          <div class="image-container">
+            <img src="static/images/algorithm.png" alt="LLM-A* Algorithm Pseudocode" class="algorithm-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End algorithm  -->
+
+
+<!-- Compare -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">
+        An Comparison Between LLM-A* and A* in Computation and Memory Efficiency During Pathfinding
+      </h2>
+      <div class="image-container has-text-centered">
+        <img src="static/images/showcase.png" alt="Comparison of LLM-A* and A*" class="showcase-image">
+      </div>
+      <p class="content has-text-justified">
+        LLM-A* leverages target states generated by large language models (LLMs) as waypoints to guide the searching process, significantly reducing the number of visited states. This leads to fewer operations and storage usage compared to A*. For example, LLM-A* identifies the optimal path with only 140 operations, less than one-fifth of the 859 operations required by A*. LLM-A* also dynamically adjusts heuristic values derived from LLM-generated waypoints, in addition to standard heuristics from A*. This dynamic adjustment allows LLM-A* to steer the search direction towards areas deemed more favorable by the large model at various stages of the search. 
+        During the search, each time the target state changes, heuristic values for all previously reached states are recalculated. This process helps LLM-A* efficiently guide the search process, continually optimizing the pathfinding efficiency.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End compare  -->
+
+
+<!-- Performance -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Performance of Path Planning</h2>
+      <p class="highlight is-small">The A* algorithm serves as
+        the baseline, with an index value of 100 indicating 
+        performance equivalent to A*. <br>
+        The methodologies are evaluated on 1000 samples in
+        maps 50 × 30 of original map sizes.</p>
+      <table class="table is-bordered is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Operation Ratio</th>
+            <th>Storage Ratio</th>
+            <th>Relative Path Length</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A* Algorithm</td>
+            <td>100</td>
+            <td>100</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>LLM-A* Algorithm w/ GPT-3.5 (Standard)</td>
+            <td>57.39</td>
+            <td>74.96</td>
+            <td>102.44</td>
+          </tr>
+          <tr>
+            <td>LLM-A* Algorithm w/ GPT-3.5 (CoT)</td>
+            <td>69.50</td>
+            <td>83.65</td>
+            <td>102.54</td>
+          </tr>
+          <tr>
+            <td>LLM-A* Algorithm w/ GPT-3.5 (RePE)</td>
+            <td>85.47</td>
+            <td>96.53</td>
+            <td><strong>102.41</strong></td>
+          </tr>
+          <tr>
+            <td>LLM-A* Algorithm w/ LLAMA3 (Standard)</td>
+            <td><strong>44.59</strong></td>
+            <td><strong>64.02</strong></td>
+            <td>102.47</td>
+          </tr>
+          <tr>
+            <td>LLM-A* Algorithm w/ LLAMA3 (CoT)</td>
+            <td>47.60</td>
+            <td>66.27</td>
+            <td>102.46</td>
+          </tr>
+          <tr>
+            <td>LLM-A* Algorithm w/ LLAMA3 (RePE)</td>
+            <td>64.08</td>
+            <td>80.19</td>
+            <td>102.54</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!-- End Performance -->
+
+
+<!-- Scalability -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Scalability</h2>
+        <div class="item">
+          <p class="highlight has-text-justified">
+            The comparative analysis examines the
+            computational and memory efficiency between A*
+            and LLM-A* (incorporating LLAMA3 with few-shot
+            prompting) across scaled environments ranging from
+            1 to 10 times enlargement. A* exhibits exponential
+            growth in both <strong>(a) OPERATION</strong> and <strong>(b) STORAGE</strong>
+            with linear increasing, environment scale, in contrast,
+            LLM-A* achieves a near linear scalability.
+          </p>
+          <img src="static/images/scalability.png" alt="MY ALT TEXT"/>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- End scalability -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

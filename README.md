@@ -2,6 +2,12 @@ Abstract
 ------
 Path planning is a fundamental scientific problem in robotics and autonomous navigation, requiring the derivation of efficient routes from starting to destination points while avoiding obstacles. Traditional algorithms like A* and its variants are capable of ensuring path validity but suffer from significant computational and memory inefficiencies as the state space grows. Conversely, large language models (LLMs) excel in broader environmental analysis through contextual understanding, providing global insights into environments. However, they fall short in detailed spatial and temporal reasoning, often leading to invalid or inefficient routes. In this work, we propose **LLM-A***, an new LLM based route planning method that synergistically combines the precise pathfinding capabilities of A* with the global reasoning capability of LLMs. This hybrid approach aims to enhance pathfinding efficiency in terms of time and space complexity while maintaining the integrity of path validity, especially in large-scale scenarios. By integrating the strengths of both methodologies, **LLM-A*** addresses the computational and memory limitations of conventional algorithms without compromising on the validity required for effective pathfinding.
 
+Algorithm
+------
+<br/>
+<p align="center"> <img width="1000" src="https://github.com/SilinMeng0510/llm-astar/assets/89226819/75a63ffa-249a-48ca-b500-c90cae64d3d3">
+
+
 Directory Structure
 ------
     .
@@ -45,6 +51,7 @@ Silin Meng, Yiwei Wang, Cheng-Fu Yang, Nanyun Peng, Kai-Wei Chang
 ## 💫 Showcase
 <br/>
 <p align="center"> <img width="1000" src="https://github.com/SilinMeng0510/llm-astar/assets/89226819/36ff049f-4e4e-453b-9454-2d6441ad79c0">
+
 
 ## 🪪 License
 MIT. Check `LICENSE`.

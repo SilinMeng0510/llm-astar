@@ -152,7 +152,7 @@ class LLMAStar:
             "llm_output": self.target_list
         }
         print(result)
-        self.plot.animation(path, visited, True, "A*", self.filepath)
+        self.plot.animation(path, visited, True, "LLM-A*", self.filepath)
         return result
 
     @staticmethod

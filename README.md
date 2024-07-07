@@ -44,8 +44,12 @@ llm = LLMAStar(llm='gpt', prompt='standard').searching(query=query, filepath='ll
 ## 📝 Citation
 If you found this work helpful, please consider citing it using the following:
 ```
-LLM-A*: Large Language Model Enhanced Incremental Heuristic Search on Path Planning
-Silin Meng, Yiwei Wang, Cheng-Fu Yang, Nanyun Peng, Kai-Wei Chang
+@article{meng2024llm,
+  title={LLM-A*: Large Language Model Enhanced Incremental Heuristic Search on Path Planning},
+  author={Meng, Silin and Wang, Yiwei and Yang, Cheng-Fu and Peng, Nanyun and Chang, Kai-Wei},
+  journal={arXiv preprint arXiv:2407.02511},
+  year={2024}
+}
 ```
 
 ## 💫 Showcase

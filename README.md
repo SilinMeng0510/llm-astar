@@ -16,7 +16,8 @@ Directory Structure
         └── search
     └── model
         ├── chatgpt
-        └── llama3
+        ├── llama3
+        └── rag
     └── pather
         ├── astar
         └── llm_astar
@@ -39,6 +40,34 @@ query = {"start": [5, 5], "goal": [27, 15], "size": [51, 31],
         "range_x": [0, 51], "range_y": [0, 31]}
 astar = AStar().searching(query=query, filepath='astar.png')
 llm = LLMAStar(llm='gpt', prompt='standard').searching(query=query, filepath='llm.png')
+```
+
+## 🔄 RAG-enhanced LLM-A*
+The latest version includes a Retrieval-Augmented Generation (RAG) feature to enhance path planning. RAG pulls similar historical examples to improve the LLM's path planning capabilities:
+
+```python
+import openai
+openai.api_key = "YOUR API KEY"
+
+from llmastar.pather import AStar, LLMAStar
+query = {"start": [5, 5], "goal": [27, 15], "size": [51, 31],
+        "horizontal_barriers": [[10, 0, 25], [15, 30, 50]],
+        "vertical_barriers": [[25, 10, 22]],
+        "range_x": [0, 51], "range_y": [0, 31]}
+
+# Using RAG to enhance pathfinding
+llm_rag = LLMAStar(
+    llm='gpt', 
+    prompt='standard',
+    use_rag=True, 
+    dataset_path='dataset_sft/environment_50_30.json'
+).searching(query=query, filepath='llm_rag.png')
+```
+
+You can also run the example script to compare standard A*, LLM-A*, and RAG-enhanced LLM-A*:
+
+```bash
+python examples/rag_example.py --llm gpt --prompt standard
 ```
 
 ## 📝 Citation

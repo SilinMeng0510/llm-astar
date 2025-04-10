@@ -103,6 +103,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+env
 .venv
 venv/
 venv.bak/
@@ -129,4 +130,3 @@ dmypy.json
 config.json
 
 outcome/*
-main.py

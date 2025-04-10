@@ -1,25 +1,34 @@
 import openai
 import os
+from .prompts.system_prompts import SYSPROMPT_PARSE, EXAMPLE_PARSE
+from .prompts.gpt_prompts import GPT_PROMPTS
 
 # This class instantiate the API, used to communicate with GPT
 class ChatGPT:
-    def __init__(self, method, sysprompt, example):
+    def __init__(self, method, sysprompt=None, example=None):
         self.id = 0
+        self.method = method
+        
+        # Use provided sysprompt or default to system parsing prompt
+        self.sysprompt = sysprompt if sysprompt else SYSPROMPT_PARSE
+        self.example = example if example else EXAMPLE_PARSE
+        
         self.chat_history = [
-            {"role": "system", "content": sysprompt}
+            {"role": "system", "content": self.sysprompt}
         ]
-        if example:
-            self.prompt = sysprompt + f'\nFollow these examples delimited with “”" as a guide.\n'
-            keys = list(example.keys())
+        
+        if self.example:
+            self.prompt = self.sysprompt + f'\nFollow these examples delimited with """ as a guide.\n'
+            keys = list(self.example.keys())
             # keys.pop(0)
             for key in keys:
-                input = example[key]
+                input = self.example[key]
                 index = input.find("\n") + 1
-                self.prompt += f'“”"\nUser: {input[:index - 1]}\nAssistant: {input[index:]}“”"\n'
+                self.prompt += f'"""\nUser: {input[:index - 1]}\nAssistant: {input[index:]}"""\n'
                 self.chat_history.append({"role": "user", "content": input[:index - 1]})
                 self.chat_history.append({"role": "assistant", "content": input[index:]})
         else:
-            self.prompt = sysprompt
+            self.prompt = self.sysprompt
 
         
     def ask(self, prompt, stop=["\n"], max_tokens=100):

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 from .env import *
 
+plt.pause = lambda x: None
 
 class Plotting:
     def __init__(self, xI, xG, env):
@@ -33,6 +34,29 @@ class Plotting:
             plt.show()
         plt.close()
         
+    def animation_with_waypoints(self, path, visited, waypoints, show, name, filepath):
+        plt.clf()
+        self.plot_grid(name)
+        self.plot_visited(visited)
+        if path:
+            self.plot_path(path)
+        if waypoints:
+            self.plot_waypoints(waypoints)
+        plt.savefig(filepath)
+        if show:
+            plt.show()
+        plt.close()
+        
+    def plot_waypoints(self, waypoints):
+        """
+        Plot waypoints as yellow stars
+        
+        Args:
+            waypoints: List of waypoints [(x1, y1), (x2, y2), ...]
+        """
+        waypoints_x = [w[0] for w in waypoints]
+        waypoints_y = [w[1] for w in waypoints]
+        plt.scatter(waypoints_x, waypoints_y, color='yellow', marker='*', s=120, zorder=3, edgecolors='black')
 
     def animation_lrta(self, path, visited, name):
         self.plot_grid(name)
@@ -101,9 +125,9 @@ class Plotting:
             #
             # length = 15
 
-            if count % length == 0:
-                plt.pause(0.001)
-        plt.pause(0.01)
+            # if count % length == 0:
+            #     plt.pause(0.001)
+        # plt.pause(0.01)
 
     def plot_path(self, path, cl='r', flag=False):
         path_x = [path[i][0] for i in range(len(path))]
@@ -117,7 +141,7 @@ class Plotting:
         plt.plot(self.xI[0], self.xI[1], "bs")
         plt.plot(self.xG[0], self.xG[1], "gs")
 
-        plt.pause(0.01)
+        # plt.pause(0.01)
 
     def plot_visited_bi(self, v_fore, v_back):
         if self.xI in v_fore:

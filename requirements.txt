@@ -1,9 +1,10 @@
-setuptools~=68.2.2
-openai==0.27.2
-inquirer~=3.2.4
+setuptools
+openai
+inquirer
 shapely
 matplotlib
 numpy
 transformers
 torch
 shapely
+jupyterlab

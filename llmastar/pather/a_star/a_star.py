@@ -1,9 +1,10 @@
-
 import math
 import heapq
 
 from llmastar.env.search import env, plotting
 from llmastar.utils import is_lines_collision
+
+import copy
 
 class AStar:
     """AStar set the cost + heuristics as the priority
@@ -16,15 +17,16 @@ class AStar:
         A_star Searching.
         :return: path, visited order
         """
+        query = copy.deepcopy(query)
+
         self.filepath = filepath
-        print(query)
         self.s_start = (query['start'][0], query['start'][1])
         self.s_goal = (query['goal'][0], query['goal'][1])
         
         self.horizontal_barriers = query['horizontal_barriers']
         self.vertical_barriers = query['vertical_barriers']
-        self.range_x = query['range_x']
-        self.range_y = query['range_y']
+        self.range_x = list(query['range_x'])
+        self.range_y = list(query['range_y'])
         self.Env = env.Env(self.range_x[1], self.range_y[1], self.horizontal_barriers, self.vertical_barriers)  # class Env
         self.plot = plotting.Plotting(self.s_start, self.s_goal, self.Env)
         self.range_x[1] -= 1
@@ -63,14 +65,20 @@ class AStar:
                 if new_cost < self.g[s_n]:  # conditions for updating Cost
                     self.g[s_n] = new_cost
                     self.PARENT[s_n] = s
-                    heapq.heappush(self.OPEN, (self.f_value(s_n), s_n))
 
+                    heapq.heappush(self.OPEN, (self.f_value(s_n), s_n))
+        
         path = self.extract_path(self.PARENT)
         visited = self.CLOSED
-        result = {"operation": count, "storage": len(self.g), "length": sum(self._euclidean_distance(path[i], path[i+1]) for i in range(len(path)-1))} 
-        print(result)
-        self.plot.animation(path, visited, True, "A*", self.filepath)
-        return result
+        if self.filepath:
+            self.plot.animation(path, visited, True, "A*", self.filepath)
+        return {
+            "path": path,
+            "visited": visited,
+            "operation": count,
+            "storage": len(self.g),
+            "length": sum(self._euclidean_distance(path[i], path[i+1]) for i in range(len(path)-1))
+        } 
     
     @staticmethod
     def _euclidean_distance(p1, p2):
@@ -157,12 +165,15 @@ class AStar:
         path = [self.s_goal]
         s = self.s_goal
 
-        while True:
-            s = PARENT[s]
-            path.append(s)
+        try:
+            while True:
+                s = PARENT[s]
+                path.append(s)
 
-            if s == self.s_start:
-                break
+                if s == self.s_start:
+                    break
+        except:
+            return []
 
         return list(path)
 

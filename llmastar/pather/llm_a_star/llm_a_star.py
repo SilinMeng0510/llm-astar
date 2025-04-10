@@ -1,6 +1,7 @@
 import json
 import math
 import heapq
+import torch
 
 from llmastar.env.search import env, plotting
 from llmastar.model import ChatGPT, Llama3
